@@ -1,0 +1,13 @@
+class Student:
+
+    def __init__(self):
+        self.studinfo = ["sk","pune"]
+
+    def info(self):
+        print("student information")
+        for stud in self.studinfo:
+            print(stud)
+
+
+s = Student()
+s.info()

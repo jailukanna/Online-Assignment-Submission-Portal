@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+
+    <link rel="icon" href="{% static 'Images/logo-bg.png' %}">
+    <title>Contact Us</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'CSS/offcanvas.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<!--canvas navbar-->
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning" href="#">
+
+            <strong>Online Assignment Submission Portal</strong></a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mx-auto mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Featured</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact Us">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About">About</a>
+                </li>
+
+            </ul>
+
+
+            <!--     button    -->
+            <div class="d-flex">
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-warning btn-outline-primary text-dark">Login</button>
+                    <button type="button"
+                            class="btn btn-warning btn-outline-primary text-dark dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop1">Student Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop2">Teacher Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop3">Admin Login</a></li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-warning btn-outline-primary text-dark">Signup</button>
+                    <button type="button"
+                            class="btn btn-warning btn-outline-primary text-dark dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop">Student Signup</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop0">Teacher Signup</a></li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+
+<!--canvas end-->
+
+
+<h1 class="text-warning bg-dark p-3 mt-5">CONTACT US</h1>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-4 col-12 ">
+            <div class="border border-2 p-2 bg-light rounded">
+                <h5>Address</h5>
+                <hr>
+                <p>Block-11, Flat-4, Housing-Board Colony, Phase-2, Rabon, Solan, Himachal Pradesh (173212)</p>
+            </div>
+
+            <div class="border border-2 mt-4 p-2 bg-light rounded">
+                <h5>Business Hours</h5>
+                <hr>
+                <p>Monday-Friday 9AM to 5PM<br>
+                    Saturday-Sunday Closed
+                </p>
+            </div>
+
+            <div class="border border-2 mt-4 p-2 bg-light rounded">
+                <h5>Telephone</h5>
+                <hr>
+                <p>+91 8219805328<br>
+                    +91 7018227148
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-7 col-12 offset-md-1">
+            <div class="bg-light rounded">
+                <h5 class="mb-4">DROP US A LINE SO THAT WE CAN HEAR FROM YOU</h5>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="email" required class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" required class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="text" required class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea type="text" required class="form-control">
+                        </textarea>
+                    </div>
+
+                    <button class="btn btn-warning btn-outline-primary text-dark mt-3">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.3931632624513!2d77.08892891509035!3d30.903632781577958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f870b0269a143%3A0x88d43ef96dd1e73!2sAnkush%20Rathour!5e0!3m2!1sen!2sin!4v1625907388373!5m2!1sen!2sin"
+            width="1300" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<footer class="footer bg-dark text-warning sticky-bottom">
+    <center>
+        <p>Online Assignment Submission Portal <a
+                href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zCiOT8-2MDM1YLRSMagwtjRIszA3SDIwMrNMNDQxtjKosLBIMTFOTbM0S0kxTDU39uJLzMsuLc5QKEosycgvLQIAi8AUGA&q=ankush+rathour&oq=An&aqs=chrome.2.69i60j69i57j46i39i175i199j46i131i433j0i131i433j69i60l2j69i61.3118j0j7&sourceid=chrome&ie=UTF-8">Developed</a>
+            by <a href="https://www.linkedin.com/in/ankush-rathour-">Ankush Rathour</a>
+        </p>
+
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </center>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+<script src="{% static 'JavaScript/offcanvas.js' %}"></script>
+</body>
+</html>

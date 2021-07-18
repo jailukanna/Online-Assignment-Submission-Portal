@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Report</title>
+
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'CSS/offcanvas.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<!--canvas navbar-->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning" href="#"><strong>Online Assignment Submission Portal</strong></a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mx-auto mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'Admin_' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Admin_' %}">Dashboard</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                       aria-expanded="false">Administration</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                        <li><a class="dropdown-item" href="Add_assignment_p">Add Assignment</a></li>
+                        <li><a class="dropdown-item" href="Add_Subject_P">Add Subject</a></li>
+                        <li><a class="dropdown-item" href="Add_User">Add New User</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown"
+                       aria-expanded="false">Reports</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                        <li><a class="dropdown-item" href="Student_Report">Student Report</a></li>
+                        <li><a class="dropdown-item" href="Admin_Report">Admin Report</a></li>
+                        <li><a class="dropdown-item" href="Teacher_Report">Teacher Report</a></li>
+                        <li><a class="dropdown-item" href="#">Assignment Report</a></li>
+                        <li><a class="dropdown-item" href="#">Subject Report</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+                       aria-expanded="false">My Account</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'Update_Password' %}">Change Password</a></li>
+                        <li><a class="dropdown-item" href="data_save">Edit Profile Picture</a></li>
+                        <li><a class="dropdown-item" href="#">Login to another account</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <!--     button    -->
+            <div class="d-flex">
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-warning " data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                        <a class="text-decoration-none text-dark" href="{% url 'Admin_Logout' %}">Logout</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!--Canvas end-->
+
+<div class="bg-dark text-warning mt-5 text-center">
+    <h1>Teacher Report</h1>
+</div>
+{% if data %}
+<div class="container mt-5">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+        <tr class="bg-dark text-warning">
+            <th>Sr.No.</th>
+            <!--            <th>Image</th>-->
+            <!--            <th>Name</th>-->
+            <th>Email</th>
+            <th>Password</th>
+            <!--            <th>Mobile</th>-->
+            <!--            <th>Gender</th>-->
+            <!--            <th>Subject</th>-->
+            <!--            <th>Action</th>-->
+        </tr>
+        </thead>
+        {% for j in data %}
+        <tr>
+            <td>{{j.id}}</td>
+            <!--            <td><img class="img-fluid" src="{{j.Image}}" width="70px" height="70px"></td>-->
+            <!--            <td>{{j.Name}}</td>-->
+            <td>{{j.Emailid}}</td>
+            <td>{{j.Password}}</td>
+            <!--            <td>{{j.Mobile}}</td>-->
+            <!--            <td>{{j.Gender}}</td>-->
+            <!--            <td>{{j.Subject}}</td>-->
+            <!--            <td>-->
+            <!--                <a class="btn btn-danger btn-outline-success" href="Teacher_update?id={{j.id}}"-->
+            <!--                   onclick="return confirm('are you sure want to Update?')">Update</a>-->
+            <!--                <a class="btn  btn-outline-danger" href="Teacher_delete_selected_row?id={{j.id}}"-->
+            <!--                   onclick="return confirm('are you sure want to delete?')">Delete</a>-->
+            <!--            </td>-->
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h1>No Record</h1>
+    {% endif %}
+</div>
+</body>
+<script>
+    $(document).ready(function() {
+          $('#dataTable').DataTable();
+    });
+
+
+</script>
+
+<script src="{% static 'JavaScript/offcanvas.js' %}"></script>
+</html>

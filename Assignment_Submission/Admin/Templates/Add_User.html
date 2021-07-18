@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    {% load static %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+            crossorigin="anonymous"></script>
+    <!--    offcanvas-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/offcanvas-navbar/">
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+            crossorigin="anonymous"></script>
+    <style>
+    .button1 {
+  position: relative;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button1:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button1:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+        .button1:hover {
+  box-shadow: 0 20px 26px 0 rgba(0,0,0,0.24), 0 20px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+
+
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'CSS/offcanvas.css' %}" rel="stylesheet">
+</head>
+<body>
+<!--canvas navbar-->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning" href="#"><strong>Online Assignment Submission Portal</strong></a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mx-auto mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'Admin_' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Admin_' %}">Dashboard</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                       aria-expanded="false">Administration</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                        <li><a class="dropdown-item" href="Add_assignment_p">Add Assignment</a></li>
+                        <li><a class="dropdown-item" href="Add_Subject_P">Add Subject</a></li>
+                        <li><a class="dropdown-item" href="Add_User">Add New User</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown"
+                       aria-expanded="false">Reports</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                        <li><a class="dropdown-item" href="Student_Report">Student Report</a></li>
+                        <li><a class="dropdown-item" href="Admin_Report">Admin Report</a></li>
+                        <li><a class="dropdown-item" href="Teacher_Report">Teacher Report</a></li>
+                        <li><a class="dropdown-item" href="#">Assignment Report</a></li>
+                        <li><a class="dropdown-item" href="#">Subject Report</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+                       aria-expanded="false">My Account</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Change Password</a></li>
+                        <li><a class="dropdown-item" href="#">Change Profile Picture</a></li>
+                        <li><a class="dropdown-item" href="#">Login to another account</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <!--     button    -->
+            <div class="d-flex">
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-warning btn-outline-primary text-dark" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                        <a class="text-decoration-none text-dark" href="{% url 'Admin_Logout' %}">Logout</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!--canvas end-->
+
+<br>
+<h1 class="bg-dark text-warning p-4 ">Add Users</h1>
+
+<div class="container-fluid ">
+    <center>
+        <div class="row ">
+            <div class="col-md-3 col-sm-4 border border-2 border-dark mx-auto me-auto mt-3">
+                <button class="btn-dark rounded-circle button1  text-warning mt-auto mb-auto "
+                        style="height:13vw; width:13vw; font-size:2vw; font-weight:bold;" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop5">
+                    <a href="#" class="text-decoration-none text-warning"> Add <br> Admin</a>
+                </button>
+            </div>
+            <div class="col-md-3 col-sm-4  border border-2 border-dark mx-auto me-auto mt-3">
+                <button class="rounded-circle btn-dark button1 text-warning mt-auto mb-auto " data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop0"
+                        style="height:13vw; width:13vw; font-size:2vw; font-weight:bold;">
+                    Add <br> Teacher
+                </button>
+            </div>
+            <div class="col-md-3 col-sm-4 border border-2 border-dark mx-auto me-auto  mt-3">
+                <button class="rounded-circle btn-dark button1 text-warning mt-auto mb-auto "
+                        data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop"
+                        style="height:13vw; width:13vw; font-size:2vw; font-weight:bold;">
+                    Add <br> Student
+                </button>
+            </div>
+        </div>
+    </center>
+</div>
+
+
+<!--Student Signup  Modal -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header bg-dark">
+                <div class="text-center">
+                    <h2 class="modal-title text-warning" style="margin-left:125px;">
+                        <strong>Add Student</strong></h2>
+                </div>
+                <button type="button" class="btn-close btn btn-warning" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+
+
+            <div class="modal-body">
+                <form method="post" action="{% url 'Student_Signup' %}">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" required class="form-control" name="nm"
+                               placeholder="Choose Your Username" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="InputEmail1" class="form-label">Email address</label>
+                        <input type="email" required class="form-control" name="email"
+                               placeholder="Enter Your Email" aria-describedby="emailHelp">
+                        <div class="form-text">We'll never share your email with anyone else.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" required class="form-control" name="password"
+                               aria-describedby="passwordHelpBlock" placeholder="Enter Your Password">
+                        <div id="passwordHelpBlock" class="form-text">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must
+                            not contain spaces,
+                            special characters, or emoji.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="number" name="mob" placeholder="Enter your Mobile" required class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Date of birth</label>
+                        <input type="date" name="dob" required class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Course</label>
+                        <div class="col-sm-10">
+                            <select required class="form-select" name="co" aria-label="Default select example">
+                                <option value="" selected disabled>Select Your Course</option>
+                                <option>Python</option>
+                                <option>Web Development</option>
+                                <option>Machine Learning</option>
+                                <option>Data Science</option>
+                                <option>Java</option>
+                                <option>Javascript</option>
+                                <option>IOT</option>
+                                <option>C/C++</option>
+                                <option>.Net</option>
+                                <option>Cloud Computing</option>
+                                <option>Networking</option>
+                                <option>Android</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" required type="radio" name="gen"
+                                       value="Male">
+                                <label class="form-check-label">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gen"
+                                       value="Female">
+                                <label class="form-check-label">Female</label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer justify-content-center bg-dark">
+                <button type="submit" class="modal-title btn btn-warning btn-outline-primary text-dark">
+                    Add User
+                </button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% if msgs %}
+<script>alert('User Added Successfully');</script>
+<!--<script>window.location='home';</script>-->
+{% endif %}
+
+<!-- Student signup modal end -->
+
+
+<!--Teacher Signup modal-->
+
+<div class="modal fade" id="staticBackdrop0" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header bg-dark">
+                <div class="text-center">
+                    <h2 class="modal-title text-warning" style="margin-left:125px;">
+                        <strong>Add Teacher</strong></h2>
+                </div>
+                <button type="button" class="btn-close btn btn-warning" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+
+
+            <div class="modal-body">
+                <form method="post" action="{% url 'Teacher_Signup' %}">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" required class="form-control" name="nm"
+                               placeholder="Choose Your Username" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="InputEmail1" class="form-label">Email address</label>
+                        <input type="email" required class="form-control" id="InputEmail1" name="email"
+                               placeholder="Enter Your Email" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" required class="form-control" name="password"
+                               aria-describedby="passwordHelpBlock" placeholder="Enter Your Password">
+                        <div class="form-text">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must
+                            not contain spaces,
+                            special characters, or emoji.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="number" name="mob" placeholder="Enter your Mobile" required class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Date of birth</label>
+                        <input type="date" name="dob" required class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Subjects</label>
+                        <div class="col-sm-10">
+                            <select required class="form-select" name="su" aria-label="Default select example">
+                                <option value="" selected disabled>Select Your Subject</option>
+                                <option>Python</option>
+                                <option>Web Development</option>
+                                <option>Machine Learning</option>
+                                <option>Data Science</option>
+                                <option>Java</option>
+                                <option>Javascript</option>
+                                <option>IOT</option>
+                                <option>C/C++</option>
+                                <option>.Net</option>
+                                <option>Cloud Computing</option>
+                                <option>Networking</option>
+                                <option>Android</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <div class="col-sm-10">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" required type="radio" name="gen"
+                                       id="inlineRadio1" value="Male">
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gen"
+                                       id="inlineRadio2" value="Female">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer justify-content-center bg-dark">
+                <button type="submit" class="modal-title btn btn-warning btn-outline-primary text-dark">
+                    Add
+                </button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+{% if Tmsg %}
+<script>alert('User Added successfully');</script>
+<!--<script>window.location='home';</script>-->
+{% endif %}
+
+<!-- Teacher signup modal end -->
+
+<!--Add new ADmin modal-->
+
+<div class="modal fade" id="staticBackdrop5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header bg-dark">
+                <div class="text-center">
+                    <h2 class="modal-title text-warning" style="margin-left:125px;">
+                        <strong>Add Admin</strong></h2>
+                </div>
+                <button type="button" class="btn-close btn btn-warning" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+
+
+            <div class="modal-body">
+                <form method="post" action="{% url 'Add_Admin' %}">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="InputEmail1" class="form-label">Email address</label>
+                        <input type="email" required class="form-control" name="Aem"
+                               placeholder="Enter Your Email" aria-describedby="emailHelp">
+                        <div class="form-text">We'll never share your email with anyone else.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" required class="form-control" name="Apw"
+                               aria-describedby="passwordHelpBlock" placeholder="Enter Your Password">
+                        <div class="form-text">
+                            Your password must be 8-20 characters long, contain letters and numbers, and must
+                            not contain spaces,
+                            special characters, or emoji.
+                        </div>
+                    </div>
+
+            </div>
+            <div class="modal-footer justify-content-center bg-dark">
+                <button type="submit" class="modal-title btn btn-warning btn-outline-primary text-dark">
+                    Add
+                </button>
+            </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% if Amsg %}
+<script>alert('User Added successfully');</script>
+<!--<script>window.location='home';</script>-->
+{% endif %}
+<!--Add Admin modal end-->
+
+<script src="{% static 'JavaScript/offcanvas.js' %}"></script>
+</body>
+</html>

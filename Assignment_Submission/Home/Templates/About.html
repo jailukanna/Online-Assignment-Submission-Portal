@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+
+    <link rel="icon" href="{% static 'Images/logo-bg.png' %}">
+    <title>About</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'CSS/offcanvas.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<!--canvas navbar-->
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning" href="#">
+
+            <strong>Online Assignment Submission Portal</strong></a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="offcanvas"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mx-auto mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Featured</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact Us">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About">About</a>
+                </li>
+
+            </ul>
+
+
+            <!--     button    -->
+            <div class="d-flex">
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-warning btn-outline-primary text-dark">Login</button>
+                    <button type="button"
+                            class="btn btn-warning btn-outline-primary text-dark dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop1">Student Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop2">Teacher Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop3">Admin Login</a></li>
+                        <li>
+                    </ul>
+                </div>
+                <div class="btn-group me-2">
+                    <button type="button" class="btn btn-warning btn-outline-primary text-dark">Signup</button>
+                    <button type="button"
+                            class="btn btn-warning btn-outline-primary text-dark dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop">Student Signup</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                               data-bs-target="#staticBackdrop0">Teacher Signup</a></li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+
+<!--canvas end-->
+
+
+<h1 class="text-warning bg-dark p-3 mt-5">ABOUT</h1>
+
+<div class="container mt-5 mb-5" style="width:950px; margin-right:14vw;">
+    <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="fst-italic text-warning">About Online Assignment Submission Portal</h4>
+        <hr>
+        <p class="mb-0 justify-content">
+            This Online Assignment Submission Portal Project in Django is a Python-based project. Using Python, Django,
+            and MySQL Database, we built a Online Assignment Submission portal which helps students to submit their
+            practical and assignments online easily. This is a role-based module in which the teachers and student can
+            perform any operation on the data.
+            <br><br>
+            A Online Assignment Submission Portal in Django is a system that allows students to upload their assignments
+            or projects online instead of sending them in a module file. The proposed method aids teachers in the
+            process of monitoring and handling students by eliminating and mitigating human error.
+
+
+            <br><br>
+            Student Features of Online Assignment Submission Portal in Django
+            Manage Student Profile– For the student profile, The student update his/her information details.
+            Registration– For the registration, The student need to register first to create their own account.
+            View Assignment and exam– For the assignment and exam, The student can view their assignment and exam
+            through this website.
+            Login – By default the student need to login first to enable to access the system.
+            View Course– For the course, The student can view all their courses.
+            <br><br>
+            Teachers Features of Online Assignment Submission Portal in Django
+            Manage Teacher Profile– For the teacher profile, The teacher can update his/her information details.
+            Registration– For the registration, The teacher need to register first to create their own account.
+            Create Course– For the add course, The teacher can add and update course information.
+            Login – By default the teacher need to login first to enable to access the system.
+            Create Exam – For the exam, The teacher can create and update exam information.
+            Create Assignment – For the assignment, The teacher can create and update assignment information.
+
+        </p>
+    </div>
+</div>
+
+<footer class="footer bg-dark text-warning sticky-bottom ">
+    <center>
+        <p>Online Assignment Submission Portal <a
+                href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zCiOT8-2MDM1YLRSMagwtjRIszA3SDIwMrNMNDQxtjKosLBIMTFOTbM0S0kxTDU39uJLzMsuLc5QKEosycgvLQIAi8AUGA&q=ankush+rathour&oq=An&aqs=chrome.2.69i60j69i57j46i39i175i199j46i131i433j0i131i433j69i60l2j69i61.3118j0j7&sourceid=chrome&ie=UTF-8">Developed</a>
+            by <a href="https://www.linkedin.com/in/ankush-rathour-">Ankush Rathour</a>
+        </p>
+
+        <p>
+            <a href="#">Back to top</a>
+        </p>
+    </center>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+<script src="{% static 'JavaScript/offcanvas.js' %}"></script>
+</body>
+</html>
