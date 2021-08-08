@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-jeqqliwmbdcbnok%&(k75(vy_ocz$2!e5o69ilh2ak*s+qbb2o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://ankushrathour.github.io/Online-Assignment-Submission-Portal/"]
 
 # Application definition
 
